@@ -1,12 +1,9 @@
-# Konfiguracja matrycy buildów dla GitHub Actions.
-# Redox z nice!view (lewa = central, prawa = peripheral).
-# settings_reset to firmware do wyczyszczenia BLE/ustawień, gdyby coś.
 ---
 include:
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: redox_left nice_view_adapter nice_view
     snippet: studio-rpc-usb-uart
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: redox_right nice_view_adapter nice_view
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: settings_reset
