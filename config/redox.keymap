@@ -292,14 +292,19 @@
         EXTRA {
             display-name = "Extra";
 /*
- * Mysz: ruch lewa ręka, kliki i scroll prawa ręka.
+ * Lewa ręka: RGB controls
+ *   Rząd 1: TOG | EFF (next effect) | EFR (prev effect) | HUI | HUD
+ *   Rząd 2: -   | BRI                | BRD                | SAI | SAD
+ *   Rząd 3: -   | SPI (speed up)     | SPD (speed down)   | -   | -
+ *
+ * Prawa ręka: mysz (ruch + scroll + kliki)
  */
             bindings = <
-&trans  &trans  &trans          &trans          &trans           &trans                                                     &trans  &trans         &trans         &trans     &trans  &trans
-&trans  &trans  &trans          &mmv MOVE_UP    &trans           &msc SCRL_UP    &trans                            &trans   &trans  &mkp LCLK      &mkp RCLK      &trans     &trans  &trans
-&trans  &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_DOWN  &trans                            &trans   &trans  &mkp LCLK      &mkp MCLK      &mkp RCLK  &trans  &trans
-&trans  &trans  &trans          &trans          &trans           &trans          &trans   &trans  &trans  &trans            &trans  &trans         &trans         &trans     &trans  &trans
-&trans  &trans  &trans          &trans                  &trans                   &trans   &trans  &trans  &trans                    &trans         &trans         &trans     &trans  &trans
+&trans  &trans            &trans            &trans            &trans            &trans                                                                       &trans  &trans         &trans         &trans     &trans  &trans
+&trans  &rgb_ug RGB_TOG   &rgb_ug RGB_EFF   &rgb_ug RGB_EFR   &rgb_ug RGB_HUI   &rgb_ug RGB_HUD   &trans                                              &trans   &trans  &mmv MOVE_UP   &trans         &msc SCRL_UP   &trans  &trans
+&trans  &trans            &rgb_ug RGB_BRI   &rgb_ug RGB_BRD   &rgb_ug RGB_SAI   &rgb_ug RGB_SAD   &trans                                              &trans   &trans  &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &msc SCRL_DOWN &trans
+&trans  &trans            &rgb_ug RGB_SPI   &rgb_ug RGB_SPD   &trans            &trans            &trans   &trans  &trans  &trans                             &trans  &mkp LCLK      &mkp MCLK      &mkp RCLK  &trans  &trans
+&trans  &trans            &trans            &trans                              &trans                      &trans   &trans  &trans  &trans                            &trans         &trans         &trans     &trans  &trans
             >;
         };
     };
